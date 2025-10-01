@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Produto>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="  preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="/images/movie_filter_FILL0_wght400_GRAD0_opsz48.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <section class="search-bar">
+            <form>
+                <input type="text" placeholder="pesquisar">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+        </section>
+
+        <section class="movies">
+            @foreach (var produto in Model)
+            {
+                <div class="movie-card" onclick="openModal('@produto.Foto', '@produto.Nome', '@produto.Descricao', '@produto.Tipo_produto', '@produto.Preco.ToString("C")')">
+                    <div class="movie-image">
+                        <img src="~/imagens/@produto.Foto" alt="Imagem do produto">
+                    </div>
+                    <h4>@produto.Nome</h4>
+                    <h4>@produto.Descricao</h4>
+                    <h4>Entre em Contato: @produto.Tipo_produto</h4>
+                    <h4>Preço: @produto.Preco.ToString("C")</h4>
+                </div>
+            }
+        </section>
+
+        <!-- Modal -->
+        <div id="productModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <br />
+                <h4 id="modalName"></h4>
+                <br />
+                <img id="modalImage" src="" alt="Imagem do produto" />
+                <p id="modalDescription"></p>
+                <p id="modalContact"></p>
+                <p id="modalPrice"></p>
+            </div>
+        </div>
+
+
+        <div class="pagination">
+            <a href="#">&laquo;</a>
+            <a class="active" href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">&raquo;</a>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script src="~/js/site.js?v=@DateTime.Now.Ticks"></script>
+
+<!--Adicionar a query string "?v=@DateTime.Now.Ticks" força o navegador a carregar sempre a versão mais recente do arquivo,
+evitando que ele use uma versão antiga em cache. Isso resolve problemas em que o código não é atualizado após alterações,
+como no seu caso, onde a funcionalidade da modal parou de funcionar depois de fazer login.-->
+

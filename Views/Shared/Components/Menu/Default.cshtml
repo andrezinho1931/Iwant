@@ -1,0 +1,29 @@
+﻿@*Aqui é o layout logado*@
+@model Utilizador
+
+<nav class="nav-bar">
+        <div class="logo">
+            Iwant
+        </div>
+        <ul class="nav-link">
+            <li><a class="active" asp-controller="Home" asp-action="Sobre">Sobre</a></li>
+            <li><a asp-controller="RegistoProduto" asp-action="IndexRegistoProduto">Vender agora</a></li>
+            <li><a asp-controller="Chat" asp-action="IndexChat">Conversas </a></li>
+
+             
+                
+            
+            <li>
+            <a class="active" asp-controller="Home" asp-action="Index">Olá, @Model.Login <i class="fa fa-caret-down"></i></a>
+                <ul class="dropdown-nav-link">
+      
+                @if(Model.Perfil == CliSenhas2024.TipoDaConta.Tipo_conta.Admin)
+                {
+                    <li><a asp-controller="Registo" asp-action="IndexLista">Apagar e editar utilizadores</a></li>
+                }
+                <li><a asp-controller="Login" asp-action="Sair">Sair</a></li>
+                </ul>
+            </li>
+        </ul>
+
+</nav>

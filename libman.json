@@ -1,0 +1,33 @@
+{
+  "version": "1.0",
+  "defaultProvider": "unpkg",
+  "libraries": [
+    {
+      "provider": "cdnjs",
+      "library": "popper.js@2.11.8",
+      "destination": "wwwroot/popper.js/",
+      "files": [
+        "umd/popper.min.js"
+      ]
+    },
+    {
+      "provider": "cdnjs",
+      "library": "signalr.js@2.4.3",
+      "destination": "wwwroot/signalr.js/",
+      "files": [
+        "jquery.signalR.js"
+      ]
+    },
+    {
+      "library": "@microsoft/signalr@6.0.6",
+      "destination": "wwwroot/microsoft/signalr/",
+      "files": [
+        "dist/browser/signalr.min.js"
+      ]
+    }
+  ]
+}
+
+// Esse arquivo configura o download e a inclusão de bibliotecas JavaScript (como Popper.js e diferentes versões do SignalR)
+// de provedores externos (como cdnjs e unpkg) em um projeto web.
+// O código especifica de onde baixar as bibliotecas, quais versões usar e para onde os arquivos devem ser colocados no projeto (wwwroot).

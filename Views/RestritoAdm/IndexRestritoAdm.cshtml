@@ -1,0 +1,33 @@
+﻿@{
+    Layout = "_LayoutDeslogado";
+    ViewData["Title"] = "Página Restrita";
+}
+<style>
+
+    .message-box {
+        text-align: center;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+        .message-box p {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .message-box a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+            .message-box a:hover {
+                text-decoration: underline;
+            }
+</style>
+<div class="message-box">
+    <p>Você não tem permissão para aceder essa funcionalidade. <a asp-controller="Home" asp-action="Index">Clique aqui para voltar</a></p>
+</div>  

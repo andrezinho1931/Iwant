@@ -1,0 +1,49 @@
+﻿
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="/images/movie_filter_FILL0_wght400_GRAD0_opsz48.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+   
+        @await Component.InvokeAsync("Menu")
+    
+
+    <div class="container">
+        @RenderBody()
+    </div>
+
+    <footer class="border-top footer custom-footer py-3">
+        <div class="container text-center">
+            <span class="text-white">&copy; 2024 - IWANT</span>
+            <span class="text-white">|</span>
+            <a asp-area="" asp-controller="Home" asp-action="Termos" class="text-white footer-link">Termos e Condições</a>
+            <span class="text-white">|</span>
+
+            <a asp-area="" asp-controller="Home" asp-action="LivroReclamacao" class="text-white footer-link">Livro de Reclamações</a>
+
+            <span class="text-white">|</span>
+
+            <a asp-area="" asp-controller="Home" asp-action="Sobre" class="text-white footer-link">Sobre Nós</a>
+            <span class="text-white">|</span>
+
+            <a href="https://www.instagram.com/_iwant._/" target="_blank">
+                <img src="~/imagens/instagram.png" alt="Instagram" class="social-icon footer-link">
+            </a>
+        </div>
+    </footer>
+
+
+</body>
+</html>

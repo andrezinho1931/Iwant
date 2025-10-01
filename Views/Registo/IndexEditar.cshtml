@@ -1,0 +1,99 @@
+﻿@using CliSenhas2024.TipoDaConta
+@*
+   @*
+    ~registo
+*@
+
+@model Utilizador
+
+@{
+    ViewData["Title"] = "Editar Utilizador";
+}
+<body class="body-reclamacoes">
+
+    <div class="header">
+        <img src="~/imagens/fotinha.png" alt="Logo IWANT">
+    </div>
+
+    <!-- Exibir mensagem de sucesso -->
+    @if (TempData["MensagemSucesso"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["MensagemSucesso"]
+        </div>
+    }
+    <br>
+    <div class="section">
+        <h2>Editar Utilizador</h2>
+
+        <form asp-controller="Registo" asp-action="Editar" method="post">
+
+            <input type="hidden" asp-for="IdUtilizador" />
+
+
+            <label for="nome">Nome:</label>
+            <input type="text" asp-for="Nome" placeholder="Edite o nome">
+            @Html.ValidationMessageFor(x => x.Nome)
+
+
+            <label for="Idade">Idade:</label>
+            <input type="number" asp-for="Idade" placeholder="Edite a idade">
+            @Html.ValidationMessageFor(x => x.Idade)
+
+
+            <label for="curso">Curso:</label>
+            <input type="text" asp-for="Curso" placeholder="Edite o curso">
+            @Html.ValidationMessageFor(x => x.Curso)
+
+
+            <label for="Num_telefone">Telemóvel:</label>
+            <input type="text" asp-for="Num_telefone" placeholder="Edite o número">
+            @Html.ValidationMessageFor(x => x.Num_telefone)
+
+
+            <label for="email">Email:</label>
+            <input type="email" asp-for="Email" placeholder="Edite o email">
+            @Html.ValidationMessageFor(x => x.Email)
+
+
+
+            <label for="login">Login:</label>
+            <input type="text" asp-for="Login" placeholder="Edite o login">
+            @Html.ValidationMessageFor(x => x.Login)
+
+
+
+
+            <label for="senha">Senha:</label>
+            <input type="password" asp-for="Senha" placeholder="Edite a senha">
+            @Html.ValidationMessageFor(x => x.Senha)
+
+
+            @*
+            <div class="form-group">
+            <label for="nome" class="form-label">Perfil:</label>
+            <select asp-for="Perfil" >
+            <option value="0">Selecione</option>
+            <option value="@Tipo_conta.Admin">Administrador</option>
+            <option value="@Tipo_conta.Padrao">Padrão</option>
+            </select>
+            </div>
+            *@
+
+            <div class="form-group">
+                <label for="foto">Foto:</label>
+                <input type="file" asp-for="Foto" placeholder="Opcional">
+            </div>
+
+            <div class="input-container">
+                <button type="submit" class="btn btn-default">Editar Utilizador</button>
+                <button type="submit" class="btn btn-default" asp-controller="Home" asp-action="Index">Voltar</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+
+
+
+

@@ -1,0 +1,86 @@
+﻿@*Aqui é o layout para a tela de login e futuramente para o esqueci a senha*@ 
+
+@*
+﻿@{
+    string username = User.Identity.Name;
+}
+*@ 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="/images/movie_filter_FILL0_wght400_GRAD0_opsz48.svg"> <!-- conferir se faz falta-->
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <nav class="nav-bar">
+        <div class="logo">
+            Iwant
+        </div>
+     @*   <ul class="nav-link">
+
+            <li><a class="active" asp-controller="Home" asp-action="Sobre">Sobre</a></li>
+            <li><a asp-controller="RegistoProduto" asp-action="IndexRegistoProduto">Vender agora</a></li>
+            @if (!string.IsNullOrEmpty(username)) // se eu tirar isso aqui, mostra a dropdown de adm 
+            {
+                <li>
+                    <a href="#">Admin <i class="fa fa-caret-down"></i></a>
+
+                    <ul class="dropdown-nav-link">
+                        <li><a href="/Genre/Add">Genre</a></li>
+                        <li><a href="/Movie/Add">Movie</a></li>
+                        <li><a href="/UserAuthentication/Logout">Logout</a></li>
+                    </ul>
+                </li>
+            }
+
+            @if (string.IsNullOrEmpty(username))
+            {
+                <li><a asp-controller="Registo" asp-action="IndexCriar">Criar conta</a></li>
+                <a class="text-white">|</a>
+                <li><a asp-controller="Login" asp-action="IndexLogin">Iniciar sessão</a></li>
+            }
+        </ul>
+        *@
+
+    </nav>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer custom-footer py-3">
+        <div class="container text-center">
+            <span class="text-white">&copy; 2024 - IWANT</span>
+            <span class="text-white">|</span>
+            <a asp-area="" asp-controller="Home" asp-action="Termos" class="text-white footer-link">Termos e Condições</a>
+            <span class="text-white">|</span>
+            <a asp-area="" asp-controller="Home" asp-action="LivroReclamacao" class="text-white footer-link">Livro de Reclamações</a>
+            <span class="text-white">|</span>
+            <a asp-area="" asp-controller="Home" asp-action="Sobre" class="text-white footer-link">Sobre Nós</a>
+            <span class="text-white">|</span>
+            <a href="https://www.instagram.com/_iwant._/" target="_blank">
+                <img src="~/imagens/instagram.png" alt="Instagram" class="social-icon footer-link">
+            </a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿@model Produto
+
+@{
+    ViewData["Title"] = "Registar Produto";
+}
+
+<body class="body-reclamacoes">
+    <div class="header">
+        <img src="~/imagens/fotinha.png" alt="Logo IWANT">
+    </div>
+
+    <!-- Exibir mensagem de sucesso -->
+    @if (TempData["MensagemSucesso"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["MensagemSucesso"]
+        </div>
+    }
+    <br>
+   
+    <div class="section">
+
+        <h2>Novo Produto</h2>
+
+        <form asp-controller="RegistoProduto" asp-action="Registar" method="post">
+            <label for="nome">Nome:</label>
+            <input type="text" asp-for="Nome" class="form-control" placeholder="Digite o nome">
+            @Html.ValidationMessageFor(x => x.Nome)
+
+            <label for="Descricao">Descrição:</label>
+            <input type="text" asp-for="Descricao" class="form-control" placeholder="Descrição">
+            @Html.ValidationMessageFor(x => x.Descricao)
+
+            <label for="curso">Preço:</label>
+            <input type="number" asp-for="Preco" class="form-control" placeholder="Preço">
+            @Html.ValidationMessageFor(x => x.Preco)
+
+            <div class="form-group">
+                <label for="foto">Foto:</label>
+                <input type="file" asp-for="Foto" class="form-control-file" placeholder="Foto">
+            </div>
+
+            <div class="input-container">
+                <button type="submit" class="btn btn-default">Novo Produto</button>
+                <button type="submit" class="btn btn-default" asp-controller="Home" asp-action="Index">Voltar</button>
+            </div>
+        </form>
+    </div>
+</body>

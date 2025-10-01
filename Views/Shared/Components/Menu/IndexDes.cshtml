@@ -1,0 +1,62 @@
+﻿@*Aqui é o layout deslogado*@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="/images/movie_filter_FILL0_wght400_GRAD0_opsz48.svg"> <!-- conferir se faz falta-->
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <nav class="nav-bar">
+        <div class="logo">
+            Iwant
+        </div>
+        <ul class="nav-link">
+
+            <li><a class="active" asp-controller="Home" asp-action="Sobre">Sobre</a></li>
+           
+           
+
+           
+                <li><a asp-controller="Registo" asp-action="IndexCriar">Criar conta</a></li>
+                <a class="text-white">|</a>
+                <li><a asp-controller="Login" asp-action="IndexLogin">Iniciar sessão</a></li>
+            
+             @*<li>
+                <a href="#">Definições <i class="fa fa-caret-down"></i></a>
+                <ul class="dropdown-nav-link">
+                    <li><a href="/Genre/Add">Perfil</a></li>
+                    <li><a href="/Movie/Add">Meus Produtos</a></li>
+                  
+                
+                </ul>
+            </li>
+             *@
+        </ul>
+
+    </nav>
+
+
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+   
+</body>
+</html>

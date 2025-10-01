@@ -1,0 +1,47 @@
+﻿@*
+   login
+*@
+
+@model LoginModel
+
+@{
+    Layout = "_LayoutDeslogado";
+    ViewData["Title"] = "Login";
+}
+
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["MensagemErro"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<br >
+<br >
+<form class="w-40"  asp-controller="Login" asp-action="Entrar" method="post">
+    <h2 class="pb-10">Login</h2>
+
+    <div class="input-container">
+        <label for="login" class="w-40">Login</label>
+        <input type="text" asp-for="Login" class="input" id="login" >
+        @Html.ValidationMessageFor(x => x.Login)
+    </div>
+    <div class="input-container">
+        <label for="senha" class="w-40">Senha</label>
+        <input type="password" asp-for="Senha" class="input" id="senha">
+        @Html.ValidationMessageFor(x => x.Senha)
+    </div>
+
+    <div class="input-container">
+        <button type="submit" class="btn btn-default">Entrar</button>
+        <button type="submit" class="btn btn-default" asp-controller="Home" asp-action="Index">Voltar</button>
+        @*<a class="btn btn-sec" href="#">Add more</a>*@
+    </div>
+  
+</form>
+
+
+
+
+ 
