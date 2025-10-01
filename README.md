@@ -44,8 +44,6 @@ Estrutura do Projeto
 
 O projeto segue a arquitetura MVC (Model-View-Controller) típica de aplicações ASP.NET Core, com a organização de arquivos e pastas que reflete essa abordagem.
 
-Plain Text
-
 
 projetofinal/
 ├── projeto final/
